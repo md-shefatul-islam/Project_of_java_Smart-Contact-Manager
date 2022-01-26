@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>About</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery3.5.1/jquery.min.js"></script>
+</head>
+<body>
+<h1>See all the admin</h1>
+<button id="btn1" onclick="getContent(">Click Here</button>
+<script type="text/javascript">
+    var id = '<%= Session[""]%>';
+    function getContent(){
+        const xhttp = new XMLHttpRequest();
+        xhttp.onreadystatechange = function(){
+            if(this.readyState === 4 && this.status === 200){
+                document.getElementById("content").innerHTML = this.responseText;
+            }
+        }
+        xhttp.open("GET" , "");
+        xhttp.setRequestHeader('content-type',"application/jason");
+        xhttp.send();
+    }
+</script>
+</body>
+</html>
